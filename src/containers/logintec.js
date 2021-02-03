@@ -17,7 +17,7 @@ function Login() {
         <div className="col-11 col-lg-5">
           <div>
             <h1 className="font-weight-light text-center py-5">
-              <span className="text-info">Log X </span>In
+              <span className="text-info">Log </span>In
             </h1>
           </div>
           <div className="form-group">
