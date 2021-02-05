@@ -6,9 +6,8 @@ function Login() {
   const [passwd, setPasswd] = useState(null);
 
   const onSubmitHandler = () => {
-    const data = new FormData();
-    data.append("email", email);
-    data.append("password", passwd);
+    const data = { email: email, password: passwd };
+
     axios.post("http://localhost:9000/teclogin", data);
   };
   return (

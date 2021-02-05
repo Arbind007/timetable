@@ -8,11 +8,7 @@ function Login() {
   const [code, setCode] = useState(null);
 
   const onSubmitHandler = () => {
-    const data = new FormData();
-    data.append("name", name);
-    data.append("email", email);
-    data.append("password", passwd);
-    data.append("code", code);
+    const data = { name: name, email: email, password: passwd, code: code };
     axios.post("http://localhost:9000/stusignup", data);
   };
   return (

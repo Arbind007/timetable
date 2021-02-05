@@ -5,13 +5,9 @@ function Login() {
   const [email, setEmail] = useState(null);
   const [passwd, setPasswd] = useState(null);
   const [name, setName] = useState(null);
-
+  const [code, setCode] = useState(null);
   const onSubmitHandler = () => {
-    const data = new FormData();
-    data.append("name", name);
-    data.append("email", email);
-    data.append("password", passwd);
-
+    const data = { name: name, email: email, password: passwd, code: code };
     axios.post("http://localhost:9000/tecsignup", data);
   };
   return (
@@ -50,7 +46,15 @@ function Login() {
               onChange={(e) => setPasswd(e.target.value)}
             />
           </div>
-
+          <div className="form-group">
+            <label htmlFor="name">Class Code*</label>
+            <input
+              type="classcode"
+              name="code"
+              className="form-control"
+              onChange={(e) => setCode(e.target.value)}
+            />
+          </div>
           <button
             type="submit"
             className="btn btn-dark float-right"
