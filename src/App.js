@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import homePage from "./containers/homepage";
 import stuLogin from "./containers/loginstu";
 import tecLogin from "./containers/logintec";
 import stuSign from "./containers/signupstu";
@@ -10,6 +11,7 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
+      <Route exact path="/" component={homePage} />
       <Route exact path="/student-login" component={stuLogin} />
       <Route exact path="/teacher-login" component={tecLogin} />
       <Route exact path="/student-signup" component={stuSign} />
