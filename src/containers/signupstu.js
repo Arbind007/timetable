@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 import Navbar from "./navbar";
+
 function Login() {
   const [email, setEmail] = useState(null);
   const [passwd, setPasswd] = useState(null);
@@ -10,9 +13,12 @@ function Login() {
     backgroundColor: "powderblue",
   };
 
+  const history = useHistory();
+
   const onSubmitHandler = () => {
     const data = { name: name, email: email, password: passwd, code: code };
     axios.post("http://localhost:9000/stusignup", data);
+    history.push("/student-login");
   };
   return (
     <div>

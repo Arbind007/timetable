@@ -8,7 +8,7 @@ import stuhome from "./containers/homestu/homestu";
 import stutable from "./containers/tablestu/tablestu";
 // import tecLogin from "./containers/logintec";
 import { BrowserRouter, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 function App() {
   return (
