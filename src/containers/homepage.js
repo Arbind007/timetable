@@ -21,12 +21,16 @@ function homepage(props) {
                 <div className="">
                   <img
                     src="https://i.graphicmama.com/blog/wp-content/uploads/2017/01/27083023/handsome-school-boy-vector.jpg"
-                    alt="teacherpic"
+                    alt="stupic"
                     style={mystyle}
                   />
                 </div>
                 <div className="my-3 mx-5">
-                  <Link to="/student-login" className="ml-auto mx-3">
+                  <Link
+                    to="/student-login"
+                    className="ml-auto mx-3"
+                    style={{ color: "black" }}
+                  >
                     Student Login
                   </Link>
                 </div>
@@ -42,7 +46,11 @@ function homepage(props) {
                   />
                 </div>
                 <div className="my-3 mx-4">
-                  <Link to="/teacher-login" className="ml-auto mx-3">
+                  <Link
+                    to="/teacher-login"
+                    className="ml-auto mx-3"
+                    style={{ color: "black" }}
+                  >
                     Teacher Login
                   </Link>
                 </div>

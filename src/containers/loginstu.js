@@ -13,7 +13,7 @@ function Login() {
   const onSubmitHandler = () => {
     const data = { email: email, password: passwd };
     axios.post("http://localhost:9000/stulogin", data);
-    history.push("/");
+    history.push("/stuhome");
   };
 
   return (
@@ -56,7 +56,7 @@ function Login() {
             </button>
             <br></br>
             <div className="">
-              Not Sigup?! Sign up now{" "}
+              Not Sigup?! Sign up now
               <Link to="/student-signup" className="ml-auto mx-3">
                 <button className="btn btn-outline-info ">Sign Up</button>
               </Link>

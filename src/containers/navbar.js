@@ -1,11 +1,11 @@
 import React from "react";
 
-function navbar(props) {
+function navbar() {
   return (
     <div>
       <nav class="navbar navbar-light" style={{ backgroundColor: "#e3f2fd" }}>
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             Time-Table
           </a>
         </div>

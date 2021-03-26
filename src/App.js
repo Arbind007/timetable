@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import homePage from "./containers/homepage";
 import stuLogin from "./containers/loginstu";
 import tecLogin from "./containers/logintec";
 import stuSign from "./containers/signupstu";
 import tecSign from "./containers/signuptec";
+import stuhome from "./containers/homestu/homestu";
+import stutable from "./containers/tablestu/tablestu";
 // import tecLogin from "./containers/logintec";
-import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <Route exact path="/teacher-login" component={tecLogin} />
       <Route exact path="/student-signup" component={stuSign} />
       <Route exact path="/teacher-signup" component={tecSign} />
+      <Route exact path="/stuhome" component={stuhome} />
+      <Route exact path="/stutable" component={stutable} />
     </BrowserRouter>
   );
 }
