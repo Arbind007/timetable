@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../navbar";
 
 function homestu() {
   return (
     <div>
-      <h1>Student Homepage</h1>
+      <Navbar />
 
       {/* <div className="col-12 col-md-4 my-2">
         <div className="card-body">
@@ -19,13 +20,13 @@ function homestu() {
           <Link to="/stutable" className="stretched-link"></Link>
         </div>
       </div> */}
-      <div className="col-12 col-md-4 my-2">
+      <div className="col-12 col-md-3 my-2 text-center align-middle">
         <div className="card shadow">
           <img
             className="card-img-top"
             src="https://yt3.ggpht.com/ytc/AAUvwniZgi1B2MEAMI1hrYuk1AFy_9fv2cZDkaCNBop5AA=s900-c-k-c0x00ffffff-no-rj"
             alt="CLASS10"
-            style={{ height: "300px" }}
+            style={{ height: "450px", width: "445px" }}
           />
           <div className="card-body">
             <h4 className="card-title">Class 10</h4>

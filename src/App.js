@@ -8,6 +8,7 @@ import stuhome from "./containers/homestu/homestu";
 import stutable from "./containers/tablestu/tablestu";
 // import tecLogin from "./containers/logintec";
 import { BrowserRouter, Route } from "react-router-dom";
+import Footer from "./containers/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/teacher-signup" component={tecSign} />
       <Route exact path="/stuhome" component={stuhome} />
       <Route exact path="/stutable" component={stutable} />
+      <Footer />
     </BrowserRouter>
   );
 }

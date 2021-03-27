@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "../navbar";
 
 export default function Tablestu() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/data")
+      .get("http://localhost:9000/data")
       .then((res) => {
         setPosts(res.data);
       })
@@ -15,19 +17,20 @@ export default function Tablestu() {
       });
   });
   return (
-    <div>
-      <table>
+    <div className="text-center ">
+      <Navbar />
+
+      <table style={{ height: "100px" }} className="table table-dark mt-3">
         <thead>
           <tr>
             <th>Time-Table</th>
-            <th>1</th>
+            <td>1</td>
             <th>2</th>
             <th>3</th>
             <th>4</th>
             <th>5</th>
             <th>6</th>
             <th>7</th>
-            <th>8</th>
           </tr>
         </thead>
         <tbody>
@@ -43,13 +46,13 @@ export default function Tablestu() {
           </tr>
           <tr>
             <td>Tuesday</td>
-            <td>{posts.A1}</td>
-            <td>{posts.A2}</td>
-            <td>{posts.A3}</td>
-            <td>{posts.A5}</td>
-            <td>{posts.A6}</td>
-            <td>{posts.A7}</td>
-            <td>{posts.A8}</td>
+            <td>{posts.B1}</td>
+            <td>{posts.B2}</td>
+            <td>{posts.B3}</td>
+            <td>{posts.B5}</td>
+            <td>{posts.B6}</td>
+            <td>{posts.B7}</td>
+            <td>{posts.B8}</td>
           </tr>
           <tr>
             <td>Wednesday</td>
