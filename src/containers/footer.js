@@ -69,10 +69,10 @@ function footer() {
 
           <section class="mb-4">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti dicta,
-              aliquam sequi voluptate quas.
+              ByteCoders pesents you solution to never miss your class due to
+              miscommuvication between the teacher and the student with the help
+              of our projet trinetra. Trinetra updates the timetable fir
+              students side when teacher updates change in the timetable.
             </p>
           </section>
         </div>
@@ -83,7 +83,7 @@ function footer() {
         >
           © 2020 Copyright:
           <a class="text-white" href="/">
-            Trinetra
+            ByteCoders
           </a>
         </div>
       </footer>
