@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "./navbar";
 
 function Login() {
@@ -10,10 +10,12 @@ function Login() {
     backgroundColor: "powderblue",
   };
 
+  const history = useHistory();
+
   const onSubmitHandler = () => {
     const data = { email: email, password: passwd };
-
     axios.post("http://localhost:9000/teclogin", data);
+    history.push("/teachhome");
   };
   return (
     <div>
