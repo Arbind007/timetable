@@ -16,7 +16,7 @@ export default function Tablestu() {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
   return (
     <div className="text-center ">
       <Navbar />
@@ -36,7 +36,7 @@ export default function Tablestu() {
         </thead>
         <tbody>
           <tr>
-            <td>Monday</td>
+            <td>Monday[a]</td>
             <td>{posts.A1}</td>
             <td>{posts.A2}</td>
             <td>{posts.A3}</td>
@@ -46,7 +46,7 @@ export default function Tablestu() {
             <td>{posts.A8}</td>
           </tr>
           <tr>
-            <td>Tuesday</td>
+            <td>Tuesday[b]</td>
             <td>{posts.B1}</td>
             <td>{posts.B2}</td>
             <td>{posts.B3}</td>
@@ -56,7 +56,7 @@ export default function Tablestu() {
             <td>{posts.B8}</td>
           </tr>
           <tr>
-            <td>Wednesday</td>
+            <td>Wednesday[c]</td>
             <td>{posts.C1}</td>
             <td>{posts.C2}</td>
             <td>{posts.C3}</td>
@@ -66,7 +66,7 @@ export default function Tablestu() {
             <td>{posts.C8}</td>
           </tr>
           <tr>
-            <td>Thursday</td>
+            <td>Thursday[d]</td>
             <td>{posts.D1}</td>
             <td>{posts.D2}</td>
             <td>{posts.D3}</td>
@@ -76,7 +76,7 @@ export default function Tablestu() {
             <td>{posts.D8}</td>
           </tr>
           <tr>
-            <td>Friday</td>
+            <td>Friday[e]</td>
             <td>{posts.E1}</td>
             <td>{posts.E2}</td>
             <td>{posts.E3}</td>
@@ -87,8 +87,8 @@ export default function Tablestu() {
           </tr>
         </tbody>
       </table>
-      <Link to="/" className="btn btn-warning mb-3">
-        Sign up
+      <Link to="/changetable" className="btn btn-warning mb-3">
+        Make changes
       </Link>
     </div>
   );
