@@ -15,7 +15,7 @@ function ChangePage() {
 
   const onSubmitHandler = () => {
     const data = { code: code, change: Change };
-    axios.post("http://localhost:8080/tablechange", data);
+    axios.post("http://localhost:9000/tablechange", data);
     history.push("/teachhome");
   };
   return (
