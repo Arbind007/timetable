@@ -9,55 +9,57 @@ app.use(cors());
 var time = false;
 var time2 = false;
 MongoClient.connect(url, function (err, db) {
-  if (err) throw err;
-  var dbo = db.db("timetable");
-  dbo.collection("periods").findOne({}, function (err, result) {
+  setInterval(() => {
     if (err) throw err;
-    A1 = result.A1;
-    A2 = result.A2;
-    A3 = result.A3;
-    A4 = result.A4;
-    A5 = result.A5;
-    A6 = result.A6;
-    A7 = result.A7;
-    A8 = result.A8;
-    //
-    B1 = result.B1;
-    B2 = result.B2;
-    B3 = result.B3;
-    B4 = result.B4;
-    B5 = result.B5;
-    B6 = result.B6;
-    B7 = result.B7;
-    B8 = result.B8;
-    //
-    C1 = result.C1;
-    C2 = result.C2;
-    C3 = result.C3;
-    C4 = result.C4;
-    C5 = result.C5;
-    C6 = result.C6;
-    C7 = result.C7;
-    C8 = result.C8;
-    //
-    D1 = result.D1;
-    D2 = result.D2;
-    D3 = result.D3;
-    D4 = result.D4;
-    D5 = result.D5;
-    D6 = result.D6;
-    D7 = result.D7;
-    D8 = result.D8;
-    //
-    E1 = result.E1;
-    E2 = result.E2;
-    E3 = result.E3;
-    E4 = result.E4;
-    E5 = result.E5;
-    E6 = result.E6;
-    E7 = result.E7;
-    E8 = result.E8;
-  });
+    var dbo = db.db("timetable");
+    dbo.collection("periods").findOne({}, function (err, result) {
+      if (err) throw err;
+      A1 = result.A1;
+      A2 = result.A2;
+      A3 = result.A3;
+      A4 = result.A4;
+      A5 = result.A5;
+      A6 = result.A6;
+      A7 = result.A7;
+      A8 = result.A8;
+      //
+      B1 = result.B1;
+      B2 = result.B2;
+      B3 = result.B3;
+      B4 = result.B4;
+      B5 = result.B5;
+      B6 = result.B6;
+      B7 = result.B7;
+      B8 = result.B8;
+      //
+      C1 = result.C1;
+      C2 = result.C2;
+      C3 = result.C3;
+      C4 = result.C4;
+      C5 = result.C5;
+      C6 = result.C6;
+      C7 = result.C7;
+      C8 = result.C8;
+      //
+      D1 = result.D1;
+      D2 = result.D2;
+      D3 = result.D3;
+      D4 = result.D4;
+      D5 = result.D5;
+      D6 = result.D6;
+      D7 = result.D7;
+      D8 = result.D8;
+      //
+      E1 = result.E1;
+      E2 = result.E2;
+      E3 = result.E3;
+      E4 = result.E4;
+      E5 = result.E5;
+      E6 = result.E6;
+      E7 = result.E7;
+      E8 = result.E8;
+    });
+  }, 2000);
 });
 
 app.use("/login", (req, res) => {
@@ -68,12 +70,12 @@ app.use("/login", (req, res) => {
     });
     req.on("end", () => {
       let testa = Buffer.concat(body).toString();
-      console.log(testa);
+      // console.log(testa);
 
       test5 = testa.split('"')[3];
       test6 = testa.split('"')[7];
-      console.log(test5);
-      console.log(test6);
+      // console.log(test5);
+      // console.log(test6);
 
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
@@ -82,8 +84,8 @@ app.use("/login", (req, res) => {
           if (err) throw err;
           let name = result.userName;
           let passwd = result.password;
-          console.log(name);
-          console.log(passwd);
+          // console.log(name);
+          // console.log(passwd);
           if (test5 == name && test6 == passwd) {
             time2 = true;
           } else {
@@ -113,12 +115,12 @@ app.use("/slogin", (req, res) => {
       });
       req.on("end", () => {
         let testb = Buffer.concat(body).toString();
-        console.log(testb);
+        // console.log(testb);
 
         test3 = testb.split('"')[3];
         test4 = testb.split('"')[7];
-        console.log(test3);
-        console.log(test4);
+        // console.log(test3);
+        // console.log(test4);
 
         MongoClient.connect(url, function (err, db) {
           if (err) throw err;
@@ -127,8 +129,8 @@ app.use("/slogin", (req, res) => {
             if (err) throw err;
             let name = result.userName;
             let passwd = result.password;
-            console.log(name);
-            console.log(passwd);
+            // console.log(name);
+            // console.log(passwd);
             if (test3 == name && test4 == passwd) {
               time = true;
             } else {
@@ -206,11 +208,23 @@ app.use("/tablechange", (req, res) => {
   });
   req.on("end", () => {
     const test = Buffer.concat(body).toString();
-    console.log(test);
+    // console.log(test);
     test1 = test.split(",")[0].split('"')[3];
     test2 = test.split(",")[1].split('"')[3];
-    console.log(test1);
-    console.log(test2);
+    // console.log(test1);
+    // console.log(test2);
+
+    MongoClient.connect(url, function (err, db) {
+      if (err) throw err;
+      var dbo = db.db("timetable");
+      var obj = {};
+      obj[test1] = test2;
+      dbo.collection("periods").updateOne({ id: "1" }, { $set: obj });
+      db.close();
+      // dbo
+      //   .collection("periods")
+      //   .updateOne({ test2: test }, { $set: { test2: test1 } });
+    });
   });
 });
 
